@@ -23,7 +23,7 @@ $newArray = getApi($urlKey, $array);
                     <div class="card-body">
                         <div class='d-flex justify-content-between'>
                             <h5 class="card-title"><?php echo strtoupper($employe['nom']).' '.ucfirst($employe['prenom']).' ('.$employe['age'].' ans)'?></h5>
-                            <span> <?php echo $employe['poste_name'][0] ?></span>
+                            <span class="fw-bold"> <?php echo $employe['poste_name'][0] ?></span>
                         </div>
                         <br>
                         <div class="row mt-5">
