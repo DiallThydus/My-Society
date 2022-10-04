@@ -13,9 +13,9 @@ $newArray = getApi($urlKey, $array);
                 <div class="col-md-4">
                     <?php 
                     if($employe['sexe']=== 'woman'){
-                        echo  '<img src="../assets/img/femme_icon.webp" class="img-fluid rounded-start" alt="Man">';
+                        echo  '<img src="assets/img/femme_icon.webp" class="img-fluid rounded-start" alt="Man">';
                     } else {
-                        echo  '<img src="../assets/img/homme_icon.webp" class="img-fluid rounded-start" alt="Man">';
+                        echo  '<img src="assets/img/homme_icon.webp" class="img-fluid rounded-start" alt="Man">';
                     }
                     ?>
                 </div>
