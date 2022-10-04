@@ -60,7 +60,6 @@ $newArray = getApi($urlKey, $array);
             $i = 0;
         } ?>
 
-
     <?php }
     echo '</div>';
     include('../views/footer.php')
