@@ -1,4 +1,3 @@
-
 <?php
 include('../views/header.php');
 include('../functions/apiGet.php');
@@ -31,17 +30,22 @@ foreach($newArray as $employe){
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
+
                         <div class='d-flex justify-content-between'>
                         <h5 class="card-title"><?php echo strtoupper($employe['nom']).' '.ucfirst($employe['prenom']).' ('.$employe['age'].' ans)'?></h5>
                         <span> <?php echo $employe['poste_name'][0] ?></span>
 
                 </div>
                         <br>
+
+                        <h5 class="card-title"><?php echo strtoupper($employe['nom']).' '.ucfirst($employe['prenom']).' ('.$employe['age'].')'?></h5>
+
                         <div class="row">
                             <div class="col-md-8">
                                 <p><span class="fw-bold">Adresse:</span> <?php echo ucwords($employe['adresse'])?></p>
                             </div>
                         </div>
+
 
                         <div class="mt-4"> 
 
@@ -63,6 +67,15 @@ foreach($newArray as $employe){
                     
                 </div>
                         
+
+                        <div class="row">
+                            <div class="col-md-4">
+                            <span class="fw-bold">Code Postal:</span> <?php echo ucwords($employe['code_postal'])?>
+                            </div>
+                            <div class="col-md-4 offset-md-2"><span class="fw-bold">Ville:</span> <?php echo ucwords($employe['ville'])?></div>
+                        </div>
+                            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
                 </div>
             </div>
@@ -80,3 +93,7 @@ echo '</div>';
 
 include('../views/footer.php')
 ?>
+
+
+
+
