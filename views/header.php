@@ -12,5 +12,6 @@
 
 <body>
     <?php
-    include('../views/navBar.php');
+    include('views/navBar.php');
     ?>
+    <div class="container-fluid m-2">

@@ -1,7 +1,8 @@
 <?php
 
-include('../routes/routeArray.php');
-include ('../functions/getEmployesCollection.php');
+include('routes/routeArray.php');
+include('functions/getEmployesCollection.php');
+include('functions/getEmployesByPoste.php');
 
 function getApi($urlKey, $array){
     // Initialisation de cURL
@@ -34,10 +35,12 @@ function getApi($urlKey, $array){
         case 'getEmployes':
             $newArray = getEmployesCollectionArray($resultat);
             break;
+        case 'getEmployesByPoste':
+            $newArray = getPostesArray($resultat);
+            break;
         default:
         $newArray = $resultat;
     }
-
 
     return $newArray;
 }

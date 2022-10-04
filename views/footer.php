@@ -1,4 +1,5 @@
-<footer class="border-top border-3">
+</div>
+<footer class="border-top border-3 mx-2">
     <div class="d-flex justify-content-between ">
         <p class="text-end ">© IPSSI BD 23.2 Thomas, Ouafae, Walid</p>
         <div>

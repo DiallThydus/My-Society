@@ -6,8 +6,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" href="#">Employes</a>
-                <a class="nav-link active" href="#">Postes</a>
+                <a class="nav-link active" href="?view=employes">Employes</a>
+                <a class="nav-link active" href="?view=postes">Postes</a>
             </div>
         </div>
     </div>
