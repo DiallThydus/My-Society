@@ -30,12 +30,44 @@ foreach($newArray as $employe){
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
+
+                        <div class='d-flex justify-content-between'>
+                        <h5 class="card-title"><?php echo strtoupper($employe['nom']).' '.ucfirst($employe['prenom']).' ('.$employe['age'].' ans)'?></h5>
+                        <span> <?php echo $employe['poste_name'][0] ?></span>
+
+                </div>
+                        <br>
+
                         <h5 class="card-title"><?php echo strtoupper($employe['nom']).' '.ucfirst($employe['prenom']).' ('.$employe['age'].')'?></h5>
+
                         <div class="row">
                             <div class="col-md-8">
                                 <p><span class="fw-bold">Adresse:</span> <?php echo ucwords($employe['adresse'])?></p>
                             </div>
                         </div>
+
+
+                        <div class="mt-4"> 
+
+                        <div class="row">
+                            <div class="col-md-4">
+                            <span class="fw-bold">Ville:</span> <?php echo ucwords($employe['ville'])?>
+                            </div>
+                            <div class="col-md-4 offset-md-2"><span class="fw-bold">Code Postal:</span> <?php echo ucwords($employe['code_postal'])?></div>
+                        </div>
+
+                        <div class="mt-5"> 
+         </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                            <span class="fw-bold">Tél:</span> <?php echo ucwords($employe['num_tel'])?>
+                            </div>
+                            <div class="col-md-6 offset-md-2"><span class="fw-bold">Mail:</span> <?php echo strtolower($employe['email'])?></div>
+                        </div>
+                    
+                </div>
+                        
+
                         <div class="row">
                             <div class="col-md-4">
                             <span class="fw-bold">Code Postal:</span> <?php echo ucwords($employe['code_postal'])?>
@@ -61,4 +93,7 @@ echo '</div>';
 
 include('../views/footer.php')
 ?>
+
+
+
 
