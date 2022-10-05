@@ -13,15 +13,9 @@ $newArray = getApi($urlKey, $array);
                 <div class="col-md-4">
                     <?php 
                     if($employe['sexe']=== 'woman'){
-<<<<<<< HEAD
-                        echo  '<img src="../assets/img/femme_icon.webp" class="img-fluid rounded-start" alt="Man">';
+                        echo '<img src="assets/img/femme_icon.webp" class="img-fluid rounded-start" alt="Man">';
                     } else {
-                        echo  '<img src="../assets/img/homme_icon.webp" class="img-fluid rounded-start" alt="Man">';
-=======
-                        echo  '<img src="assets/img/femme_icon.webp" class="img-fluid rounded-start" alt="Man">';
-                    } else {
-                        echo  '<img src="assets/img/homme_icon.webp" class="img-fluid rounded-start" alt="Man">';
->>>>>>> 821d6366caa61561dc57fb87b1a2a2e1d8bbe0f4
+                        echo '<img src="assets/img/homme_icon.webp" class="img-fluid rounded-start" alt="Man">';
                     }
                     ?>
                 </div>
@@ -29,11 +23,7 @@ $newArray = getApi($urlKey, $array);
                     <div class="card-body">
                         <div class='d-flex justify-content-between'>
                             <h5 class="card-title"><?php echo strtoupper($employe['nom']).' '.ucfirst($employe['prenom']).' ('.$employe['age'].' ans)'?></h5>
-<<<<<<< HEAD
-                            <span> <?php echo $employe['poste_name'][0] ?></span>
-=======
                             <span class="fw-bold"> <?php echo $employe['poste_name'][0] ?></span>
->>>>>>> 821d6366caa61561dc57fb87b1a2a2e1d8bbe0f4
                         </div>
                         <br>
                         <div class="row mt-5">
