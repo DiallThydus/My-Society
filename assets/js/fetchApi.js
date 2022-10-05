@@ -15,9 +15,9 @@ function fetchGet(url){
     })
 }
 
-function fetchPost(url, data){
+function fetchPostPatchOrDelete(url, method, data){
     fetch(url+API_KEY, {
-        method: 'POST',
+        method: method,
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
     })
