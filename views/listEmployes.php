@@ -46,8 +46,9 @@ $newArray = getApi($urlKey, $array);
                                 <div class="col-md-6 offset-md-2"><span class="fw-bold">Mail: </span><?php echo strtolower($employe['email']) ?></div>
                             </div>
                             <div class="row mt-4">
-                                <div class="col-md-4">
-                                    <button class="btn btn-danger deleteEmploye" id="deleteEmployes" value="<?php echo $id ?>">Delete</button>
+                                <div class="col-md-4 d-flex justify-content-end">
+                                    <button class="btn btn-warning mx-1 editEmploye" value="<?php echo $id ?>">Edit</button>
+                                    <button class="btn btn-danger mx-1 deleteEmploye" value="<?php echo $id ?>">Delete</button>
                                 </div>
                             </div>
                         </div>
