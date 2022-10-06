@@ -11,12 +11,6 @@ if(isset($_GET['view'])){
         case 'postes':
             include 'views/employesByPostes.php';
             break;
-            case 'addEmployee':
-                include 'views/addEmployesForm.php';
-                break;
-            case 'updateEmployee':
-                include 'views/updateEmployesForm.php';
-                break;
         default:
             break;
     }

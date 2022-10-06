@@ -1,3 +1,80 @@
+function fireAddEmployee(){
+    Swal.fire({
+        title: 'Ajouter un employé',
+        html: `
+        <form id="formAddEmployee">
+            <div class="col-sm-10 my-2 mx-auto">
+                <input class="form-control" id="nom" name="nom" type="text" placeholder="Nom">
+            </div>
+
+            <div class="col-sm-10 my-2 mx-auto">
+                <input class="form-control" id="prenom" name="prenom" type="text" placeholder="Prénom">
+            </div>
+            <div class="col-sm-10 my-2 mx-auto">
+                <div class="col-sm-7 d-flex justify-content-between">
+                    <span><input name="sexe" type="radio" id="radio_man" value="man"><label for="radio_man"> Homme</label></span>
+                    <span><input name="sexe" value="woman" id="radio_woman" type="radio"><label for="radio_woman"> Femme</label></span>
+                </div>
+            </div>
+        <div class="col-sm-10 my-2 mx-auto">
+                <input class="form-control" id="age" name="age" type="number" placeholder="Age">
+            </div>
+        
+            <div class="col-sm-10 my-2 mx-auto">
+                <input class="form-control" name="adresse" id="adresse" type="text" placeholder="Adresse">
+            </div>
+        
+            <div class="col-sm-10 my-2 mx-auto">
+                <input class="form-control" name="ville" id="ville" type="text" placeholder="Ville">
+            </div>
+        
+            <div class="col-sm-10 my-2 mx-auto">
+                <input class="form-control" name="code_postal" id="code_postal" type="text" placeholder="Code Postal">
+            </div>
+
+            <div class="col-sm-10 my-2 mx-auto">
+                <input class="form-control" name="email" id="email" type="mail" placeholder="Email">
+            </div>
+
+            <div class="col-sm-10 my-2 mx-auto">
+                <input class="form-control" name="numtel" id="numtel" type="text" placeholder="Numéro de téléphone">
+            </div>
+
+            <div class="col-sm-10 my-2 mx-auto">
+                <input class="form-control" name="hired_date" id="hired_date" placeholder="Date d'embauche">
+            </div>
+        </form>`,
+        stopKeydownPropagation: false,
+        confirmButtonText: 'Valider',
+        allowOutsideClick: false,
+        showCancelButton: true,
+        cancelButtonText: 'Annuler',
+        reverseButtons: true,
+        focusConfirm: false,
+        preConfirm: () => {
+            let dataArray = ['nom', 'prenom', 'radio_man', 'radio_woman', 'age', 'adresse', 'ville', 'code_postal', 'email', 'numtel', 'hired_date'];
+            let emptyArray = [];
+            for(id of dataArray){
+                if(! Swal.getPopup().querySelector('#'+ id +'').value){
+                    emptyArray.push(id);
+                }
+            }
+            if (emptyArray.length > 0){
+                Swal.showValidationMessage(`${emptyArray.length} champ(s) nécessite une valeur`)
+            }
+            let formData = new FormData(formAddEmployee);
+          return {formData}
+        },
+        willOpen: () => {
+            flatpickrInstance = flatpickr(
+              Swal.getPopup().querySelector('#hired_date')
+            )
+          }
+      }).then((result) => {
+        submitCreateEmployeeForm(result.value.formData)
+      })
+}
+
 function fireUpdateEmployee(value, idEmployee){
     let man, woman
     (value.fields.sexe ==='man') ? man = "checked" : woman = "checked";
@@ -5,45 +82,45 @@ function fireUpdateEmployee(value, idEmployee){
     Swal.fire({
         title: 'Editer l\'employé',
         html: `
-        <form id="editEmployeForm">
-            <div class="col-sm-10 my-2 ">
+        <form id="formEditEmployee">
+            <div class="col-sm-10 my-2 mx-auto ">
                 <input class="form-control" id="nom" name="nom" type="text" placeholder="Nom" value="${value.fields.nom}">
             </div>
 
-            <div class="col-sm-10 my-2">
+            <div class="col-sm-10 my-2 mx-auto">
                 <input class="form-control" id="prenom" name="prenom" type="text" placeholder="Prénom" value="${value.fields.prenom}">
             </div>
-            <div class="col-sm-10 my-2">
+            <div class="col-sm-10 my-2 mx-auto">
                 <div class="col-sm-7 d-flex justify-content-between">
                     <span><input name="sexe" type="radio" id="radio_man" value="man" ${man}><label for="radio_man"> Homme</label></span>
                     <span><input name="sexe" value="woman" id="radio_woman" type="radio" ${woman}><label for="radio_woman"> Femme</label></span>
                 </div>
             </div>
-        <div class="col-sm-10 my-2">
+        <div class="col-sm-10 my-2 mx-auto">
                 <input class="form-control" id="age" name="age" type="number" placeholder="Age" value="${value.fields.age}">
             </div>
         
-            <div class="col-sm-10 my-2">
+            <div class="col-sm-10 my-2 mx-auto">
                 <input class="form-control" name="adresse" id="adresse" type="text" placeholder="Adresse" value="${value.fields.adresse}">
             </div>
         
-            <div class="col-sm-10 my-2">
+            <div class="col-sm-10 my-2 mx-auto">
                 <input class="form-control" name="ville" id="ville" type="text" placeholder="Ville" value="${value.fields.ville}">
             </div>
         
-            <div class="col-sm-10 my-2">
+            <div class="col-sm-10 my-2 mx-auto">
                 <input class="form-control" name="code_postal" id="code_postal" type="text" placeholder="Code Postal" value="${value.fields.code_postal}">
             </div>
 
-            <div class="col-sm-10 my-2">
+            <div class="col-sm-10 my-2 mx-auto">
                 <input class="form-control" name="email" id="email" type="mail" placeholder="Email" value="${value.fields.email}">
             </div>
 
-            <div class="col-sm-10 my-2">
+            <div class="col-sm-10 my-2 mx-auto">
                 <input class="form-control" name="numtel" id="numtel" type="text" placeholder="Numéro de téléphone" value="${value.fields.num_tel}">
             </div>
 
-            <div class="col-sm-10 my-2">
+            <div class="col-sm-10 my-2 mx-auto">
                 <input class="form-control" name="hired_date" id="hired_date" placeholder="Date d'embauche" value="${value.fields.date_embauche}">
             </div>
         </form>`,
@@ -65,9 +142,9 @@ function fireUpdateEmployee(value, idEmployee){
             if (emptyArray.length > 0){
                 Swal.showValidationMessage(`${emptyArray.length} champ(s) nécessite une valeur`)
             }
-            let formData = new FormData(editEmployeForm);
+            let formData = new FormData(formEditEmployee);
             formData.append('id', idEmployee);
-          return {formData}
+            return {formData}
         },
         willOpen: () => {
             flatpickrInstance = flatpickr(
@@ -79,7 +156,7 @@ function fireUpdateEmployee(value, idEmployee){
       })
 }
 
-function fireToastsWhenEditedData(success){
+function fireSuccessOrErrorToasts(success){
     
       if (success === true){
         const Toast = Swal.mixin({
