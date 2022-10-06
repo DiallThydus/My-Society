@@ -3,6 +3,9 @@ include('functions/apiGet.php');
 $urlKey = 'getEmployes';
 $newArray = getApi($urlKey, $array);
 ?>
+<div class="d-flex justify-content-end">
+<button class="btn btn-success mr-3" id="btnAddEmployee">Add</button>
+</div>
 <div class="card-group row">
     <?php
     foreach ($newArray as $id => $employe) {
@@ -14,7 +17,7 @@ $newArray = getApi($urlKey, $array);
                     <div class="col-md-4">
                         <?php
                         if ($employe['sexe'] === 'woman') {
-                            echo '<img src="assets/img/femme_icon.webp" class="img-fluid rounded-start" alt="Man">';
+                            echo '<img src="assets/img/femme_icon.webp" class="img-fluid rounded-start" alt="Woman">';
                         } else {
                             echo '<img src="assets/img/homme_icon.webp" class="img-fluid rounded-start" alt="Man">';
                         }
@@ -27,26 +30,26 @@ $newArray = getApi($urlKey, $array);
                                 <span class="fw-bold"> <?php echo $employe['poste_name'][0] ?></span>
                             </div>
                             <br>
-                            <div class="row mt-5">
+                            <div class="row mt-3">
                                 <div class="col-md-8">
                                     <span class="fw-bold">Adresse: </span><?php echo ucwords($employe['adresse']) ?>
                                 </div>
                             </div>
-                            <div class="row mt-4">
+                            <div class="row mt-3">
                                 <div class="col-md-4">
                                     <span class="fw-bold">Ville: </span><?php echo ucwords($employe['ville']) ?>
                                 </div>
                                 <div class="col-md-4 offset-md-2"><span class="fw-bold">Code Postal: </span><?php echo ucwords($employe['code_postal']) ?></div>
                             </div>
 
-                            <div class="row mt-4">
+                            <div class="row mt-3">
                                 <div class="col-md-4">
                                     <span class="fw-bold">Tél: </span><?php echo ucwords($employe['num_tel']) ?>
                                 </div>
                                 <div class="col-md-6 offset-md-2"><span class="fw-bold">Mail: </span><?php echo strtolower($employe['email']) ?></div>
                             </div>
-                            <div class="row mt-4">
-                                <div class="col-md-4 d-flex justify-content-end">
+                            <div class="row mt-3 d-flex justify-content-end">
+                                <div class="col-md-4">
                                     <button class="btn btn-warning mx-1 editEmploye" value="<?php echo $id ?>">Edit</button>
                                     <button class="btn btn-danger mx-1 deleteEmploye" value="<?php echo $id ?>">Delete</button>
                                 </div>
