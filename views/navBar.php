@@ -9,7 +9,6 @@
                 <a class="nav-link active" href="?view=employes">Employes</a>
                 <a class="nav-link" href="?view=postes">Postes</a>
                 <a class="nav-link" href="?view=addEmployee">Ajouter un Employé</a>
-                <a class="nav-link" href="?view=updateEmployee">Editer un Employé</a>
             </div>
         </div>
     </div>
