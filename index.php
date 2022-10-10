@@ -16,5 +16,4 @@ if(isset($_GET['view'])){
     }
 }
 
-
 require('views/footer.php');
