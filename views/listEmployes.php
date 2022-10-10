@@ -28,8 +28,9 @@ $newArray = getApi($urlKey, $array);
                             <div class='d-flex justify-content-between'>
                                 <h5 class="card-title"><?php echo strtoupper($employe['nom']) . ' ' . ucfirst($employe['prenom']) . ' (' . $employe['age'] . ' ans)' ?></h5>
                                 <span class="fw-bold"> <?php echo $employe['poste_name'][0] ?></span>
-                            </div>
-                            <br>
+                        </div>
+                        <br>
+                        <div class="row mt-5">
                             <div class="row mt-3">
                                 <div class="col-md-8">
                                     <span class="fw-bold">Adresse: </span><?php echo ucwords($employe['adresse']) ?>
